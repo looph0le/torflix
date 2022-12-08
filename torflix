@@ -1,0 +1,24 @@
+#!/bin/bash
+
+### Author: Mitansh Panchal (https://github.com/looph0le)
+## version: 1.0.0
+
+query=$1
+
+fetchmagnet() {
+  url="http://galaxy3yrfbwlwo72q3v2wlyjinqr2vejgpkxb22ll5pcpuaxlnqjiid.onion/torrents.php?search=$query#results"
+
+  mainlink=$(torsocks curl -s $url | grep -Eo "/torrent/[0-9]{8}/[a-zA-Z0-9?%-]*" | fzf)
+
+  if [[ $(echo $mainlink | wc -c) -gt 1 ]]; then
+    webtorrent "$(torsocks curl -s "http://galaxy3yrfbwlwo72q3v2wlyjinqr2vejgpkxb22ll5pcpuaxlnqjiid.onion$mainlink" | grep -o "magnet:?xt.*&" | cut -d'&' -f1)" --mpv
+  else
+    echo "exiting torflix..."
+  fi
+}
+
+if [[ $(echo $query | wc -c) -gt 1 ]]; then
+  fetchmagnet
+else
+  echo "please enter an argument!"
+fi
