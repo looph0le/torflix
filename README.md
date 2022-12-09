@@ -1,7 +1,7 @@
 <h1 align="center">torflix</h1>
 <p align="center">Stream movies and TV shows in MPV or VLC, links fetched from tor website.</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RVDRy-Kc4xA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Youtube Demonstration Video](https://www.youtube.com/embed/RVDRy-Kc4xA)
 
 ## Requirements:
 - tor: Tor is a connection-oriented anonymizing communication service.
