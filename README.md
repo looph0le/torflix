@@ -14,4 +14,16 @@
 ```bash
 sudo pacman -S tor torsocks fzf;sudo npm install -g webtorrent-cli
 ```
-
+## How to install
+1. Install the requirements mentioned above.
+2. Start tor.service on your system
+```bash
+systemctl enable tor.service
+systemctl start tor.service
+```
+3. clone the repo and run the install.sh script.
+```bash
+git clone https://github.com/looph0le/torflix;cd torflix;bash install.sh
+```
+4. The script is installed at $HOME/.local/bin, make sure to export this path.
+5. Enjoy!
